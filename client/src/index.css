@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme { --color-ink: #101112; --color-panel: #191b1d; --color-line: #2b2e31; --color-copy: #e8e8e3; --color-muted: #92958f; --color-lime: #c8f36a; --color-amber: #e8ad52; --color-coral: #e77b6d; }
+
+:root { font-family: "DM Sans", ui-sans-serif, system-ui, sans-serif; color: var(--color-copy); background: var(--color-ink); color-scheme: dark; font-synthesis: none; }
+* { box-sizing: border-box; }
+html, body, #root { min-height: 100%; }
+body { margin: 0; min-width: 320px; background: #101112; }
+button, input, select, textarea { font: inherit; border-radius: 0.5rem; }
+button { cursor: pointer; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; } }
+::selection { background: #c8f36a; color: #101112; }
