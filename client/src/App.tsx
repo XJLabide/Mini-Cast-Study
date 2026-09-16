@@ -6,6 +6,7 @@ import { ProductDetailsPage } from "@/pages/ProductDetailsPage";
 import { ProductsPage } from "@/pages/ProductsPage";
 import { ReportsPage } from "@/pages/ReportsPage";
 import { ReorderCenterPage } from "@/pages/ReorderCenterPage";
+import { DocumentationPage } from "@/pages/DocumentationPage";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
           <Route path="/products/:id" element={<ProductDetailsPage />} />
           <Route path="/reports" element={<ReportsPage />} />
           <Route path="/reorder" element={<ReorderCenterPage />} />
+          <Route path="/documentation" element={<DocumentationPage />} />
           <Route path="*" element={<DashboardPage />} />
         </Routes>
       </AppShell>

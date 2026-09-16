@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { IconEdit, IconPackage, IconPlus, IconSearch, IconTrash } from "@tabler/icons-react";
+import { IconChevronDown, IconEdit, IconPackage, IconPlus, IconSearch, IconTrash } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
 import { ProductModal } from "@/components/products/ProductModal";
 import { ConfirmDialog } from "@/components/ui/ConfirmDialog";
@@ -88,19 +88,19 @@ export function ProductsPage() {
       </section>
 
       <section className="mt-10 flex min-h-0 flex-1 flex-col overflow-hidden rounded-lg border border-line bg-panel md:mt-12">
-        <div className="flex flex-col gap-3 border-b border-line p-4 md:flex-row md:items-center md:justify-between md:p-5">
-          <div className="flex min-h-10 min-w-0 flex-1 items-center gap-3 border border-line bg-ink px-3 py-2 text-muted md:max-w-md">
-            <IconSearch size={18} />
+        <div className="flex flex-col gap-4 border-b border-line p-4 md:flex-row md:items-center md:justify-between md:p-5">
+          <div className="flex h-11 min-w-0 flex-1 items-center gap-3 rounded-lg border border-line bg-ink px-3 text-muted md:max-w-xl">
+            <IconSearch size={18} className="shrink-0" />
             <input aria-label="Search products" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search name, category, or supplier" className="w-full min-w-0 bg-transparent text-sm text-copy outline-none placeholder:text-muted" />
           </div>
-          <div className="grid grid-cols-2 gap-3 sm:flex">
-            <select aria-label="Filter by category" value={category} onChange={(event) => setCategory(event.target.value)} className="min-h-10 min-w-0 border border-line bg-ink px-3 py-2 text-sm leading-5 text-copy outline-none focus:border-lime">
+          <div className="flex w-full gap-3 sm:w-auto">
+            <div className="relative min-w-0 flex-1 sm:flex-none"><select aria-label="Filter by category" value={category} onChange={(event) => setCategory(event.target.value)} className="h-11 w-full appearance-none rounded-lg border border-line bg-ink px-3 pr-10 text-sm leading-5 text-copy outline-none focus:border-lime">
               <option value="all">All categories</option>
               {categories.map((item) => <option key={item} value={item}>{item}</option>)}
-            </select>
-            <select aria-label="Filter by status" value={status} onChange={(event) => setStatus(event.target.value as "all" | ProductStatus)} className="min-h-10 min-w-0 border border-line bg-ink px-3 py-2 text-sm leading-5 text-copy outline-none focus:border-lime">
+            </select><IconChevronDown aria-hidden="true" size={16} className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-muted" /></div>
+            <div className="relative min-w-0 flex-1 sm:flex-none"><select aria-label="Filter by status" value={status} onChange={(event) => setStatus(event.target.value as "all" | ProductStatus)} className="h-11 w-full appearance-none rounded-lg border border-line bg-ink px-3 pr-10 text-sm leading-5 text-copy outline-none focus:border-lime">
               {statuses.map((item) => <option key={item} value={item}>{item === "all" ? "All statuses" : item}</option>)}
-            </select>
+            </select><IconChevronDown aria-hidden="true" size={16} className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-muted" /></div>
           </div>
         </div>
 

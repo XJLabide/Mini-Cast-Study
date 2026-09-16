@@ -41,6 +41,7 @@ This document is the source of truth for design, UX, structure, and implementati
   - Inventory Reports
 - Use React Router links. Do not use regular `href` navigation for internal routes because it causes page reloads and visual flashes.
 - Do not change sidebar sizing, height, collapse behavior, or lower identity behavior when making unrelated Dashboard changes.
+- Keep Documentation as a lower sidebar destination above the Inventory team identity. It documents the API-layer boundary only; do not expose every project file.
 
 ## Reorder Center
 
